@@ -1,0 +1,12 @@
+
+seda:
+  image: seda
+  container_name: seda
+  restart: always
+  volumes:
+    - ./:/var/www/html
+    - ./www/seda/shared:/www/seda/shared
+  expose:
+    - "80"
+  ports:
+    - "80"

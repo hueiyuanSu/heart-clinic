@@ -1,0 +1,102 @@
+﻿
+//hack bootstrap
+.modal-xl{
+    width: 1200px;
+}
+.modal-footer .btn + .btn {
+    margin-bottom: 5px;
+}
+
+.dataTable{
+    td{
+        vertical-align: middle!important;
+    }
+    .btn{
+        margin-bottom: 0px;
+    }
+}
+.switch-wrapper{
+    .bootstrap-switch{
+        display: block;
+    }
+}
+/* page */
+.an-body-topbar{
+    .an-page-title{
+    }
+    .an-page-tool{
+    }
+}
+
+/* form  */
+.an-input-group{
+    .an-input-group-addon{
+        .addon_label{
+            font-size: 14px;
+        }
+    }
+    @for $i from 0 through 20{
+        &.addon_w#{70+$i*10}{
+            .an-input-group-addon{
+                width: #{70+$i*10}px;
+            }
+            .an-form-control{
+                padding-left: #{80+$i*10}px;
+            }
+        }
+    }
+    .range_input_joint{
+        position: absolute;
+        left: 50%;
+    }
+
+    &.range_group{
+        &::before{
+            content: '~';
+            position: absolute;
+            left: 48.5%;
+            top: 8px;
+        }
+        .range_input{
+            width: 48%;
+            float: left;
+            margin-right:2%;
+
+        }
+        .range_input+.range_input{
+            width: 50%;
+            padding-left:10px;
+            margin-right:0;
+        }
+    }
+
+}
+@media screen and (max-width: 600px) {
+    .an-body-topbar{
+        .an-page-title{
+            width: 100%;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        .an-page-tool{
+            width: 100%;
+            text-align: center;
+        }
+    }
+    .an-input-group{
+        .mobile_hide{
+            display: none!important;
+        }
+        .mobile_reset{
+            padding-left: 10px!important;
+        }
+        &.range_group{
+            &::before{
+                left: 48%;
+            }
+        }
+
+    }
+
+}
+//hack custom.css

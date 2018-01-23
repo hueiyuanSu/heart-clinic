@@ -1,0 +1,84 @@
+.croppie-image-modal{
+    .cr-overlay{
+        z-index: 9999;
+    }
+    .preview_area{
+        width: 200px;
+        margin:0 auto 10px;
+        position: relative;
+        .upload-msg{
+            height: 200px;
+            width: 200px;
+            background: #eee;
+        }
+        .upload-avatar-wrap{
+            display: none;
+        }
+
+        &.ready{
+            .upload-msg{
+                display: none;
+            }
+            .upload-avatar-wrap{
+                display: block;
+            }
+        }
+        .cr-image{
+            z-index: 1100;
+        }
+        .cr-boundary{
+            z-index: 1100;
+            width: 200px;
+            height: 200px;
+        }
+        .cr-viewport{
+            z-index: 1101;
+        }
+        .cr-overlay{
+
+        }
+    }
+    .file_area{
+        width: 200px;
+        height: 70px;
+        margin:0 auto;
+        position: relative;
+    }
+    .upload_btn_wrapper{
+        width: 100%;
+        height: 30px;
+        max-width: 200px;
+        position: relative;
+        margin-bottom: 10px;
+
+        .real_upload_btn{
+            width: 100%;
+            position: absolute;
+            height: 30px;
+            opacity: 0;
+        }
+        .fake_btn{
+            width: 100%;
+            position: absolute;
+            height: 30px;
+            line-height: 30px;
+            background: rgba(100, 89, 177, 0.69);
+            color: white;
+            border-radius: 4px;
+            text-align: center;
+            cursor: pointer;
+        }
+    }
+    .upload_comfirm{
+        width: 100%;
+        position: absolute;
+        height: 30px;
+        line-height: 30px;
+        background: rgb(52, 145, 33);
+        color: white;
+        border-radius: 4px;
+        text-align: center;
+        margin-bottom: 10px;
+        cursor: pointer;
+    }
+}

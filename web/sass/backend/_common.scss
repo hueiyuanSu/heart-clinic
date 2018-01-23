@@ -1,0 +1,143 @@
+.m-r-5{
+	margin-right:5px!important;
+}
+.m-r-10{
+	margin-right:10px!important;
+}
+.m-l-5{
+	margin-left:5px!important;
+}
+.m-l-10{
+	margin-left:10px!important;
+}
+.m-b-5{
+	margin-bottom: 5px!important;
+}
+.m-b-10{
+	margin-bottom: 10px!important;
+}
+.m-b-20{
+	margin-bottom: 20px!important;
+}
+.m-t-24{
+    margin-top: 24px!important;
+}
+.no-padding{
+    padding: 0!important;
+}
+.underline{
+	text-decoration: underline;
+}
+h3{
+    font-size: 24px;
+}
+
+.fade-icon{
+		color:rgb(233, 175, 131);
+}
+.site_title{
+    img{
+		margin-top:10px;
+        width: 85%;
+    }
+}
+#main-menu{
+	z-index: 999!important;
+}
+/* tab 樣式 */
+#view-tabs{
+    background-color: transparent;
+    margin: 21px 0 0;
+    border-bottom: none;
+}
+#view-tabs-content{
+	border: 1px solid #E6E9ED;
+	padding: 15px;
+	min-height: 500px;
+}
+
+/* form 表單內額外的樣式 */
+.address-county-wrapper{
+	.city{
+        width: 100px;
+        display: inline-block;
+    }
+    .district{
+        display: inline-block;
+        margin-left:10px;
+        width: 100px;
+    }
+    select{
+        width: 100px;
+        height: 34px;
+        line-height: 34px;
+    }
+}
+form{
+    label{
+        line-height: 30px;
+    }
+}
+.btn-pointer{
+	cursor: pointer;
+}
+.column_add_btn{
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+.dataTable{
+    td:first-child{
+        max-width:150px;
+    }
+    td:nth-child(2){
+        max-width:150px;
+    }
+    td{
+        overflow:hidden;
+        text-overflow:ellipsis;
+    }
+
+}
+.file_count{
+	margin-left: 5px;
+	color: #194de1;
+	font-size: 14px;
+}
+
+.fullview_td{
+	word-wrap: break-word!important;
+	white-space: normal!important;
+	overflow: auto!important;
+
+}
+
+.main_logo{
+	max-width: 200px;
+	width: 100%;
+}
+.login_logo{
+	max-width: 150px;
+	width: 100%;
+	margin:0 auto 10px;
+	position: relative;
+	display: inherit;
+}
+.an-topbar-left-part{
+	.toggle-button{
+		margin-left:20px;
+	}
+}
+
+.table_wrapper{
+	padding: 20px;
+}
+/* floara editor hack */
+.fr-box > div{
+	display:none;
+}
+.fr-box{
+	.fr-toolbar, .fr-wrapper{
+		display: block;
+	}
+}
