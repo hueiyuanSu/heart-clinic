@@ -28,7 +28,6 @@ $this->params['breadcrumbs'][] = $this->title;
 
 <div class="row">
     <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3">
-        <?= Html::img('@web/images/logo.png',$options = ['alt'=>'Nature Care', 'class'=>'login_logo']); ?>
         <div class="panel panel-default">
 
 
@@ -83,16 +82,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 <?php ActiveForm::end(); ?>
             </div>
         </div>
-        <?php if ($module->enableConfirmation): ?>
-            <p class="text-center">
-                <?= Html::a(Yii::t('appuser', 'Didn\'t receive confirmation message?'), ['/user/registration/resend']) ?>
-            </p>
-        <?php endif ?>
-        <?php if ($module->enableRegistration): ?>
-            <p class="text-center">
-                <?= Html::a(Yii::t('appuser', 'Don\'t have an account? Sign up!'), ['/user/registration/register']) ?>
-            </p>
-        <?php endif ?>
+
         <?= Connect::widget([
             'baseAuthUrl' => ['/user/security/auth'],
         ]) ?>

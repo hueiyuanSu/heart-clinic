@@ -82,7 +82,7 @@ class SecurityController extends BaseSecurityController
 
         $this->trigger(self::EVENT_AFTER_LOGOUT, $event);
 
-        return $this->redirect('user/login');
+        return $this->redirect('/user/login');
     }
 
     /**

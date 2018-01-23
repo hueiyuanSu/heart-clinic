@@ -5,8 +5,7 @@ use yii\helpers\Html;
 <header class="an-header wow fadeInDown">
 	<div class="an-topbar-left-part">
 		<h3 class="an-logo-heading">
-			<a class="an-logo-link" href="<?= Yii::$app->homeUrl; ?>">
-				<?= Html::img('@web/images/logo.png',$options = ['alt'=>'logo', 'class'=>'main_logo']); ?>
+			<a class="an-logo-link" href="<?= Yii::$app->homeUrl; ?>">心齋中醫診所
 			</a>
 		</h3>
 		<button class="an-btn an-btn-icon toggle-button js-toggle-sidebar">

@@ -19,7 +19,7 @@ BackendAppAsset::register($this);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?= Html::csrfMetaTags() ?>
-    <title><?= Html::encode($this->title) ?> | SEDA</title>
+    <title><?= Html::encode($this->title) ?> | 心齋中醫</title>
     <?php $this->head() ?>
 </head>
 <body>
