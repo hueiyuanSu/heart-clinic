@@ -1,11 +1,11 @@
 
 seda:
-  image: seda
-  container_name: seda
+  image: clinic
+  container_name: clinic
   restart: always
   volumes:
     - ./:/var/www/html
-    - ./www/seda/shared:/www/seda/shared
+    - ./www/clinic/shared:/www/clinic/shared
   expose:
     - "80"
   ports:
