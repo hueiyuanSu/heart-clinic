@@ -3,8 +3,8 @@
 namespace app\controllers\admin;
 
 use Yii;
-use app\models\News;
-use app\models\NewsSearch;
+use app\models\Banners;
+use app\models\BannersSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use app\db\Transaction;
@@ -13,9 +13,9 @@ use yii\web\BadRequestHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * NewsController implements the CRUD actions for News model.
+ * BannersController implements the CRUD actions for Banners model.
  */
-class NewsController extends Controller
+class ReserveController extends Controller
 {
     /**
      * @inheritdoc
@@ -43,7 +43,6 @@ class NewsController extends Controller
             $this->redirect('/user/login');
             return;
         }
-
         // if(Yii::$app->GeneralHelper->getRoleName()!='manager'){
         //     $this->redirect('/index');
         //     return;
@@ -60,12 +59,12 @@ class NewsController extends Controller
     }
 
     /**
-     * Lists all News models.
+     * Lists all Banners models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $searchModel = new NewsSearch();
+        $searchModel = new BannersSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
@@ -75,7 +74,7 @@ class NewsController extends Controller
     }
 
     /**
-     * Displays a single News model.
+     * Displays a single Banners model.
      * @param integer $id
      * @return mixed
      */
@@ -87,13 +86,13 @@ class NewsController extends Controller
     }
 
     /**
-     * Creates a new News model.
+     * Creates a new Banners model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new News();
+        $model = new Banners();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
@@ -105,7 +104,7 @@ class NewsController extends Controller
     }
 
     /**
-     * Updates an existing News model.
+     * Updates an existing Banners model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -124,7 +123,7 @@ class NewsController extends Controller
     }
 
     /**
-     * Deletes an existing News model.
+     * Deletes an existing Banners model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -137,15 +136,15 @@ class NewsController extends Controller
     }
 
     /**
-     * Finds the News model based on its primary key value.
+     * Finds the Banners model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return News the loaded model
+     * @return Banners the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = News::findOne($id)) !== null) {
+        if (($model = Banners::findOne($id)) !== null) {
             return $model;
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');

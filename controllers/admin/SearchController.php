@@ -16,7 +16,7 @@ use yii\filters\VerbFilter;
 /**
  * NewsController implements the CRUD actions for News model.
  */
-class IndustryController extends Controller
+class SearchController extends Controller
 {
     /**
      * @inheritdoc

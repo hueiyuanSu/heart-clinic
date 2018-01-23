@@ -20,12 +20,12 @@ $viewArray = array('index','update','create','view');
                     <span class="an-arrow-nav"><i class="icon-arrow-down"></i></span>
                 </span>
             </a>
-            <ul class="an-child-nav js-open-nav" <?= ( $controllerID =='banners')? 'style="display: block;"':'' ?>>
-                <li><a href="<?= Url::to('/admin/banners'); ?>" role="">預約系統</a></li>
+            <ul class="an-child-nav js-open-nav" <?= ( $controllerID =='reserve')? 'style="display: block;"':'' ?>>
+                <li><a href="<?= Url::to('/admin/reserve'); ?>" role="">預約系統</a></li>
             </ul>
         </li>
 
-        <li class="an-nav-item <?= ( $controllerID =='industry')? 'current active':'' ?>">
+        <li class="an-nav-item <?= ( $controllerID =='search')? 'current active':'' ?>">
             <a class=" js-show-child-nav" href="#">
                 <i class="fa fa-envelope-open-o"></i>
                 <span class="nav-title" role="">查詢管理
@@ -33,7 +33,7 @@ $viewArray = array('index','update','create','view');
                 </span>
             </a>
             <ul class="an-child-nav js-open-nav" <?= ( $controllerID =='account')? 'style="display: block;"':'' ?>>
-                <li><a href="<?= Url::to('/admin/industry'); ?>" role="">查詢系統</a></li>
+                <li><a href="<?= Url::to('/admin/search'); ?>" role="">查詢系統</a></li>
             </ul>
         </li>
 
