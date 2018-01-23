@@ -7,7 +7,7 @@ use yii\widgets\Pjax;
 /* @var $searchModel app\models\NewsSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = Yii::t('app', 'Industry');
+$this->title = Yii::t('app', 'Query');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="an-body-topbar wow fadeIn">

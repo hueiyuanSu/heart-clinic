@@ -3,8 +3,8 @@
 namespace app\controllers\admin;
 
 use Yii;
-use app\models\Banners;
-use app\models\BannersSearch;
+use app\models\Reserve;
+use app\models\ReserveSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use app\db\Transaction;
@@ -64,7 +64,7 @@ class ReserveController extends Controller
      */
     public function actionIndex()
     {
-        $searchModel = new BannersSearch();
+        $searchModel = new ReserveSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
@@ -92,7 +92,7 @@ class ReserveController extends Controller
      */
     public function actionCreate()
     {
-        $model = new Banners();
+        $model = new Reserve();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
@@ -139,12 +139,12 @@ class ReserveController extends Controller
      * Finds the Banners model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return Banners the loaded model
+     * @return Reserve the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = Banners::findOne($id)) !== null) {
+        if (($model = Reserve::findOne($id)) !== null) {
             return $model;
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');

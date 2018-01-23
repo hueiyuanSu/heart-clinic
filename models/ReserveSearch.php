@@ -5,12 +5,12 @@ namespace app\models;
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use app\models\Staticpage;
+use app\models\Reserve;
 
 /**
- * StaffSearch represents the model behind the search form about `app\models\Staff`.
+ * BannersSearch represents the model behind the search form about `app\models\Banners`.
  */
-class StaticpageSearch extends Staff
+class ReserveSearch extends Reserve
 {
     /**
      * @inheritdoc
@@ -18,8 +18,8 @@ class StaticpageSearch extends Staff
     public function rules()
     {
         return [
-            [['id','version'], 'integer'],
-            [['category','content'], 'safe'],
+            [['id', 'reserve_number', 'reserve_date','reserve_time', 'create_date', 'update_date'], 'integer'],
+            [['patient_name','patient_phone','remark','disease'], 'safe'],
         ];
     }
 
@@ -39,9 +39,9 @@ class StaticpageSearch extends Staff
      *
      * @return ActiveDataProvider
      */
-    public function search()
+    public function search($params)
     {
-        $query = Staticpage::find();
+        $query = Reserve::find();
 
         // add conditions that should always apply here
 
@@ -49,7 +49,7 @@ class StaticpageSearch extends Staff
             'query' => $query,
         ]);
 
-        // $this->load($params);
+        $this->load($params);
 
         if (!$this->validate()) {
             // uncomment the following line if you do not want to return any records when validation fails
@@ -60,11 +60,17 @@ class StaticpageSearch extends Staff
         // grid filtering conditions
         $query->andFilterWhere([
             'id' => $this->id,
-            'version' => $this->version,
+            'reserve_number' => $this->reserve_number,
+            'reserve_date' => $this->reserve_date,
+            'reserve_time' => $this->reserve_time,
+            'create_date' => $this->create_date,
+            'update_date' => $this->update_date,
         ]);
 
-        $query->andFilterWhere(['like', 'category', $this->category])
-            ->andFilterWhere(['like', 'content', $this->content]);
+        $query->andFilterWhere(['like', 'patient_name', $this->patient_name])
+            ->andFilterWhere(['like', 'patient_phone', $this->patient_phone])
+            ->andFilterWhere(['like', 'disease', $this->disease])
+            ->andFilterWhere(['like', 'remark', $this->remark]);
 
         return $dataProvider;
     }

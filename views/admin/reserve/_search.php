@@ -17,23 +17,14 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'id') ?>
 
-    <?= $form->field($model, 'name') ?>
+    <?= $form->field($model, 'patient_name') ?>
 
-    <?= $form->field($model, 'avatar') ?>
+    <?= $form->field($model, 'patient_phone') ?>
 
-    <?= $form->field($model, 'img_url') ?>
+    <?= $form->field($model, 'reserve_date') ?>
 
-    <?= $form->field($model, 'sorts') ?>
+    <?= $form->field($model, 'reserve_time') ?>
 
-    <?php // echo $form->field($model, 'start_at') ?>
-
-    <?php // echo $form->field($model, 'end_at') ?>
-
-    <?php // echo $form->field($model, 'status') ?>
-
-    <?php // echo $form->field($model, 'modified_at') ?>
-
-    <?php // echo $form->field($model, 'created_at') ?>
 
     <div class="form-group">
         <?= Html::submitButton(Yii::t('app', 'Search'), ['class' => 'btn btn-primary']) ?>

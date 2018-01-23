@@ -6,8 +6,8 @@ use yii\widgets\DetailView;
 /* @var $this yii\web\View */
 /* @var $model app\models\Banners */
 
-$this->title = $model->name;
-$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Banners'), 'url' => ['index']];
+$this->title = '預約編號'.$model->reserve_number;
+$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Reserve'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="an-body-topbar wow fadeIn">
@@ -31,28 +31,12 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
-            'name',
-            'title',
-            'subtitle',
-            [
-                'attribute'=>'Avatar',
-                'label' =>  Yii::t('app', 'Avatar'),
-                'value'=>$model->avatar,
-                'format' => ['image',['width'=>'100']],
-            ],
-            [
-                'attribute' => 'status',
-                'format'=>'html',
-                'value' => function ($model) {
-                    return $model->getStatusLabel();
-                },
-            ],
-            'img_url:url',
-            // 'sorts',
-            'start_at:datetime',
-            'end_at:datetime',
-            'modified_at:datetime',
-            'created_at:datetime',
+            'patient_name',
+            'patient_phone',
+            'reserve_date:datetime',
+            'reserve_time:datetime',
+            'disease',
+            'remark',
         ],
     ]) ?>
 

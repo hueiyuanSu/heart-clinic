@@ -7,7 +7,7 @@ use yii\widgets\Pjax;
 /* @var $searchModel app\models\BannersSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = Yii::t('app', 'Banners');
+$this->title = Yii::t('app', 'Reserve');
 $this->params['breadcrumbs'][] = $this->title;
 
 ?>
@@ -16,7 +16,7 @@ $this->params['breadcrumbs'][] = $this->title;
         <h2><?= Html::encode($this->title) ?></h2>
     </div>
     <div class="title_right">
-        <?= Html::a('<i class="fa fa-plus m-r-5"></i>'.Yii::t('app', 'Create Banner'), ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('<i class="fa fa-plus m-r-5"></i>'.Yii::t('app', 'Create Reserve'), ['create'], ['class' => 'btn btn-success']) ?>
     </div>
 </div>
 <div class="an-single-component with-shadow">
@@ -25,36 +25,12 @@ $this->params['breadcrumbs'][] = $this->title;
             <div class="an-scrollable-x">
                 <?php Pjax::begin(); ?>    <?= GridView::widget([
                         'dataProvider' => $dataProvider,
-                        'filterModel' => $searchModel,
                         'columns' => [
-                            [
-                                'attribute'=>'avatar',
-                                'format' => ['image',['width'=>'100']],
-                                'value' => function ($model) {
-                                    return $model->avatar;
-                                },
-                            ],
-                            'name',
-                            [
-                                'attribute' => 'img_url',
-                                'format'=>'html',
-                                'value' => function ($model) {
-                                    return '<a href="'.$model->img_url.'" target="_BLANK">'.$model->img_url.'</a>';
-                                },
-                            ],
-                            // 'sorts',
-                            'start_at:datetime',
-                            'end_at:datetime',
-                            [
-                                'attribute' => 'status',
-                                'format'=>'html',
-                                'value' => function ($model) {
-                                    return $model->getStatusLabel();
-                                },
-                            ],
-                            // 'modified_at',
-                            // 'created_at',
-
+                            'patient_name',
+                            'patient_phone',
+                            'reserve_date',
+                            'reserve_time',
+                            'disease',
                             [
                                 'class' => 'yii\grid\ActionColumn',
                                 'headerOptions' => ['style' => 'width:150px'],
