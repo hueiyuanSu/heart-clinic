@@ -20,15 +20,13 @@ $this->params['breadcrumbs'][] = $this->title;
         <?= Html::a('<i class="fa fa-plus m-r-5"></i>'.Yii::t('app', 'Create Reserve'), ['create'], ['class' => 'btn btn-success']) ?>
     </div>
 </div>
-<?php
-    echo $this->render('_filter');
-?>
 <div class="an-single-component with-shadow">
     <div class="an-component-body">
         <div class="an-helper-block">
             <div class="an-scrollable-x">
                 <?php Pjax::begin(); ?>    <?= GridView::widget([
                         'dataProvider' => $dataProvider,
+                        // 'filterModel' => $searchModel,
                         'columns' => [
                             'patient_name',
                             'patient_phone',

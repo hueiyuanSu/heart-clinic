@@ -26,7 +26,6 @@ $this->params['breadcrumbs'][] = $this->title;
 <?php
 use app\assets\CroppieAsset;
 CroppieAsset::register($this);
-echo $this->render('_avatar_modal', ['model'=>$model]);
 $this->registerJsFile('@web/js/admin/share/avatar.js', ['depends'=>['app\assets\BackendAppAsset']]);
 $this->registerJsFile('@web/js/admin/banners/action.js', ['depends'=>['app\assets\BackendAppAsset']]);
 ?>

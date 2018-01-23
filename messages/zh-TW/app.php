@@ -56,6 +56,7 @@ return [
     'Reserve Date' => '預約日期',
     'Reserve Time' => '預約時間',
     'Filter' => '搜尋條件',
+    'Update Reserve' => '修改預約',
     'Create At'=>'建立日期',
     'Update At'=>'修改日期',
     'Disease' => '門診',

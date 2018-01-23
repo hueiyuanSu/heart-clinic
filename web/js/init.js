@@ -1,6 +1,7 @@
 
 $(document).ready(function(){
-	var $root = $('html, body');
+    var $root = $('html, body');
+
 	$(document).on('click', '.smooth-link', function(event){
         // event.preventDefault();
         var href = $.attr(this, 'href');
@@ -11,6 +12,8 @@ $(document).ready(function(){
         });
         return false;
     });
+    //get coumnt of shipment
+
 });
 
 jQuery('#datetimepicker-reserve').datetimepicker({
@@ -62,4 +65,5 @@ jQuery('#datetimepicker-time').datetimepicker({
 
     },
 });
+
 
