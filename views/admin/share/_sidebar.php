@@ -13,10 +13,24 @@ $viewArray = array('index','update','create','view');
         <ul class="an-main-nav">
 
 
-        <li class="an-nav-item <?= ( $controllerID =='banners')? 'current active':'' ?>">
+        <li class="an-nav-item <?= ( $controllerID =='reserve')? 'current active':'' ?>">
             <a class=" js-show-child-nav" href="#">
                 <i class="fa fa-image"></i>
                 <span class="nav-title" role="">預約管理
+                    <span class="an-arrow-nav"><i class="icon-arrow-down"></i></span>
+                </span>
+            </a>
+            <ul class="an-child-nav js-open-nav" <?= ( $controllerID =='reserve')? 'style="display: block;"':'' ?>>
+                <li><a href="<?= Url::to('/admin/reserve'); ?>" role="">預約查詢系統</a></li>
+                <li><a href="<?= Url::to('/admin/reserve/today'); ?>" role="">今日預約</a></li>
+                <li><a href="<?= Url::to('/admin/reserve/create'); ?>" role="">新增預約</a></li>
+            </ul>
+        </li>
+
+        <li class="an-nav-item <?= ( $controllerID =='waiting')? 'current active':'' ?>">
+            <a class=" js-show-child-nav" href="#">
+                <i class="fa fa-image"></i>
+                <span class="nav-title" role="">候補管理
                     <span class="an-arrow-nav"><i class="icon-arrow-down"></i></span>
                 </span>
             </a>

@@ -69,9 +69,8 @@ use yii\helpers\Html;
 					<span class="an-arrow-nav"><i class="icon-arrow-down"></i></span>
 				</button>
 				<div class="dropdown-menu">
-					<p class="an-info-count">Profile Settings</p>
+					<p class="an-info-count">個人設定</p>
 					<ul class="an-profile-list">
-						<li><a href="<?= Url::to(['/user/profile']);?>"><i class="icon-user"></i><?= Yii::t('app', 'My Profile') ?></a></li>
 						<!-- <li><a href="<?= Url::to(['/']);?>"><i class="icon-download-left"></i>中文</a></li>
 						<li><a href="<?= Url::to(['/']);?>"><i class="icon-download-left"></i>泰文</a></li> -->
 						<li><a href="<?= Url::to(['/user/logout']);?>" data-method="post"><i class="icon-download-left"></i><?= Yii::t('appuser', 'Logout') ?></a></li>
