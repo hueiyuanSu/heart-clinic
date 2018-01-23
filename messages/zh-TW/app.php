@@ -59,6 +59,7 @@ return [
     'Update At'=>'修改日期',
     'Disease' => '門診',
     'Remark' => '備註',
+    'Today Reservation' => '今日預約',
 
     'Query' => '查詢系統',
     'Permissions Management' => '權限管理',

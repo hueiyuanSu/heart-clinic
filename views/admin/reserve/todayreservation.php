@@ -8,7 +8,7 @@ use app\components\Status;
 /* @var $searchModel app\models\BannersSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = Yii::t('app', 'Reserve');
+$this->title = Yii::t('app', 'Today Reservation');
 $this->params['breadcrumbs'][] = $this->title;
 
 ?>
@@ -37,30 +37,6 @@ $this->params['breadcrumbs'][] = $this->title;
                                     $status_helper = new Status();
                                     return $status_helper->disease_status($model->disease);
                                 },
-                            ],
-                            [
-                                'class' => 'yii\grid\ActionColumn',
-                                'headerOptions' => ['style' => 'width:150px'],
-                                'template' => '{view}{update}{delete}',
-                                'buttons' => [
-                                    'view' => function ($url, $model) {
-                                        return Html::a('<div class="btn btn-info m-r-5"><i class="fa fa-eye"></i></div>', $url, [
-                                                    'title' => Yii::t('app', 'lead-view'),
-                                        ]);
-                                    },
-
-                                    'update' => function ($url, $model) {
-                                        return Html::a('<div class="btn btn-success m-r-5"><i class="fa fa-pencil"></i></div>', $url, [
-                                                    'title' => Yii::t('app', 'lead-update'),
-                                        ]);
-                                    },
-                                    'delete' => function ($url, $model) {
-                                        return Html::a('<div class="btn btn-danger"><i class="fa fa-trash"></i></div>', $url, [
-                                                    'title' => Yii::t('app', 'lead-delete'),
-                                        ]);
-                                    }
-
-                                ],
                             ],
                         ],
                     ]); ?>

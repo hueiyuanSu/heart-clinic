@@ -122,6 +122,18 @@ class ReserveController extends Controller
         }
     }
 
+    public function actionToday(){
+        $searchModel = new ReserveSearch();
+        $date = Yii::$app->formatter->asTime(time(), 'php:Y-m-d');
+
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams,$date);
+
+        return $this->render('todayreservation', [
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider,
+        ]);
+    }
+
     /**
      * Deletes an existing Banners model.
      * If deletion is successful, the browser will be redirected to the 'index' page.

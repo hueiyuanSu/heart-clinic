@@ -12,18 +12,10 @@ class Status {
 
         return $data[$param];
     }
-    function stop_status($param){
+    function disease_status($param){
         $data = array(
-            '0' => Yii::t('app','Not Stopped'),
-            '1' => Yii::t('app','Stopped'),
-        );
-
-        return $data[$param];
-    }
-    function confirmed_status($param){
-        $data = array(
-            '0' => Yii::t('app','Not Confirmed'),
-            '1' => Yii::t('app','Confirmed'),
+            '1' => '內診',
+            '2' => '針灸',
         );
 
         return $data[$param];

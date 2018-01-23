@@ -39,7 +39,7 @@ class ReserveSearch extends Reserve
      *
      * @return ActiveDataProvider
      */
-    public function search($params)
+    public function search($params,$date=null)
     {
         $query = Reserve::find();
 
@@ -47,7 +47,13 @@ class ReserveSearch extends Reserve
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
+            'sort'=> ['defaultOrder' => ['reserve_date'=>SORT_DESC]],
         ]);
+
+        if($date){
+            $query->andFilterWhere(['reserve_date'=>strtotime($date)]);
+            $query->orderBy(['reserve_time'=>DESC]);
+        }
 
         $this->load($params);
 
@@ -71,6 +77,7 @@ class ReserveSearch extends Reserve
             ->andFilterWhere(['like', 'patient_phone', $this->patient_phone])
             ->andFilterWhere(['like', 'disease', $this->disease])
             ->andFilterWhere(['like', 'remark', $this->remark]);
+
 
         return $dataProvider;
     }
