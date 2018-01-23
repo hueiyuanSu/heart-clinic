@@ -71,6 +71,9 @@ class Reserve extends \yii\db\ActiveRecord
         if(!$this->reserve_number){
             $this->reserve_number = time();
         }
+        if($this->reserve_date && $this->reserve_time){
+            return false;
+        }
         return true;
     }
     public function afterFind(){

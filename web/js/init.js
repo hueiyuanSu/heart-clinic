@@ -24,6 +24,17 @@ jQuery('#datetimepicker-reserve').datetimepicker({
 
     },
 });
+jQuery('#datetimepicker-start').datetimepicker({
+    timepicker:false,
+    format:'Y-m-d',
+    closeOnDateSelect:false,
+    onShow:function(ct){
+        this.setOptions({
+            minDate:Date()
+        })
+
+    },
+});
 
 jQuery('#datetimepicker-time').datetimepicker({
     datepicker:false,

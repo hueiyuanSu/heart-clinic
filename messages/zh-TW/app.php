@@ -55,6 +55,7 @@ return [
     'Reserve Number' => '預約編號',
     'Reserve Date' => '預約日期',
     'Reserve Time' => '預約時間',
+    'Filter' => '搜尋條件',
     'Create At'=>'建立日期',
     'Update At'=>'修改日期',
     'Disease' => '門診',
@@ -63,5 +64,7 @@ return [
 
     'Query' => '查詢系統',
     'Permissions Management' => '權限管理',
+    'Categories Manage' => '分類管理',
+    'Create Category' => '新增分類頁面',
 
 ];

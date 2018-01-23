@@ -47,7 +47,7 @@ class ReserveSearch extends Reserve
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
-            'sort'=> ['defaultOrder' => ['reserve_date'=>SORT_DESC]],
+            'sort'=> ['defaultOrder' => ['reserve_date'=>SORT_DESC,'reserve_time'=>SORT_DESC]],
         ]);
 
         if($date){

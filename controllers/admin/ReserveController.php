@@ -97,6 +97,7 @@ class ReserveController extends Controller
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
+            $model = new Reserve();
             return $this->render('create', [
                 'model' => $model,
             ]);
