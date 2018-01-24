@@ -29,7 +29,8 @@ use yii\helpers\ArrayHelper;
                 <?=
                     $form->field($model, 'disease')->dropdownList([
                         1 => '內診',
-                        2 => '針灸'
+                        2 => '針灸',
+                        3 => '傷科',
                     ],
                     ['prompt'=>'請選擇門診']
                 );

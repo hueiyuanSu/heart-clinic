@@ -16,9 +16,6 @@ $this->params['breadcrumbs'][] = $this->title;
     <div class="an-page-title">
         <h2><?= Html::encode($this->title) ?></h2>
     </div>
-    <div class="title_right">
-        <?= Html::a('<i class="fa fa-plus m-r-5"></i>'.Yii::t('app', 'Create Reserve'), ['create'], ['class' => 'btn btn-success']) ?>
-    </div>
 </div>
 <div class="an-single-component with-shadow">
     <div class="an-component-body">

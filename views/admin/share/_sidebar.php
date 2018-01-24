@@ -29,22 +29,32 @@ $viewArray = array('index','update','create','view');
 
         <li class="an-nav-item <?= ( $controllerID =='waiting')? 'current active':'' ?>">
             <a class=" js-show-child-nav" href="#">
-                <i class="fa fa-image"></i>
+                <i class="fa fa-address-card-o"></i>
                 <span class="nav-title" role="">候補管理
                     <span class="an-arrow-nav"><i class="icon-arrow-down"></i></span>
                 </span>
             </a>
             <ul class="an-child-nav js-open-nav" <?= ( $controllerID =='reserve')? 'style="display: block;"':'' ?>>
                 <li><a href="<?= Url::to('/admin/reserve'); ?>" role="">預約查詢系統</a></li>
-                <li><a href="<?= Url::to('/admin/reserve/today'); ?>" role="">今日預約</a></li>
-                <li><a href="<?= Url::to('/admin/reserve/create'); ?>" role="">新增預約</a></li>
+            </ul>
+        </li>
+
+        <li class="an-nav-item <?= ( $controllerID =='waiting')? 'current active':'' ?>">
+            <a class=" js-show-child-nav" href="#">
+                <i class="fa fa-calendar"></i>
+                <span class="nav-title" role="">日期時間設定
+                    <span class="an-arrow-nav"><i class="icon-arrow-down"></i></span>
+                </span>
+            </a>
+            <ul class="an-child-nav js-open-nav" <?= ( $controllerID =='reserve')? 'style="display: block;"':'' ?>>
+                <li><a href="<?= Url::to('/admin/reserve'); ?>" role="">時間修改系統</a></li>
             </ul>
         </li>
 
 
         <li class="an-nav-item <?= ( $controllerID =='user')? 'current active':'' ?>">
             <a class="" href="<?= Url::to('/user/admin'); ?>">
-                <i class="icon-chart-stock"></i>
+                <i class="fa fa-folder-open"></i>
                 <span class="nav-title" role=""><?=Yii::t('app','Permissions Management')?>
 
         <li class="an-nav-item <?= ( $controllerID =='user' || $controllerID =='rbac')? 'current active':'' ?>">

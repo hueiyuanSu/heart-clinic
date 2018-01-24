@@ -88,8 +88,8 @@ $config = [
             'transport' => [
                 'class' => 'Swift_SmtpTransport',
                 'host' => 'smtp.gmail.com',
-                'username' => 's0261020@gm.ncue.edu.tw',
-                'password' => 'eason0926',
+                'username' => 'agooday.clinic3@gmail.com',
+                'password' => '236503020201',
                 'port' => '465',
                 'encryption' =>'ssl',
             ],

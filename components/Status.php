@@ -16,6 +16,7 @@ class Status {
         $data = array(
             '1' => '內診',
             '2' => '針灸',
+            '3' => '傷科',
         );
 
         return $data[$param];
