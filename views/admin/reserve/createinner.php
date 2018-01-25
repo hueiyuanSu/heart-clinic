@@ -6,7 +6,7 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\Banners */
 
-$this->title = Yii::t('app', 'Create Reserve');
+$this->title = Yii::t('app', 'Create Inner Reserve');
 $this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Reserve'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>

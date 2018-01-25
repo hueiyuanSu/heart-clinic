@@ -49,7 +49,9 @@ return [
     'pload Avatar'=>'上傳封面',
     //banners
     'Reserve'=>'預約管理',
-    'Create Reserve' => '新增預約',
+    'Create Inner Reserve' => '新增內診預約',
+    'Create Harm Reserve' => '新增傷科預約',
+    'Create Needle Reserve' => '新增針灸預約',
     'Patient Name' => '病患姓名',
     'Patient Phone' => '病患電話',
     'Reserve Number' => '預約編號',

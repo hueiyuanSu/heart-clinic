@@ -33,8 +33,8 @@ $this->params['breadcrumbs'][] = $this->title;
         'attributes' => [
             'patient_name',
             'patient_phone',
-            'reserve_date:datetime',
-            'reserve_time:datetime',
+            'reserve_date:date',
+            'reserve_time',
             [
                 'attribute'=>'disease',
                 'value' => function ($model) {

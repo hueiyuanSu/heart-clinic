@@ -5,6 +5,8 @@ namespace app\controllers\admin;
 use Yii;
 use app\models\Reserve;
 use app\models\ReserveSearch;
+use app\models\Diseasetime;
+use app\models\DiseasetimeSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use app\db\Transaction;
@@ -90,18 +92,67 @@ class ReserveController extends Controller
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
-    public function actionCreate()
+    public function actionCreateinner()
     {
         $model = new Reserve();
+        $time = new Diseasetime();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+        if ($model->load(Yii::$app->request->post()) && $this->saveInner($model)) {
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             $model = new Reserve();
-            return $this->render('create', [
+            return $this->render('createinner', [
                 'model' => $model,
             ]);
         }
+    }
+    public function actionCreateharm()
+    {
+        $model = new Reserve();
+        $time = new Diseasetime();
+
+        if ($model->load(Yii::$app->request->post()) && $this->saveHarm($model)) {
+            return $this->redirect(['view', 'id' => $model->id]);
+        } else {
+            $model = new Reserve();
+            return $this->render('createharm', [
+                'model' => $model,
+            ]);
+        }
+    }
+    public function actionCreateneedle()
+    {
+        $model = new Reserve();
+        $time = new Diseasetime();
+
+        if ($model->load(Yii::$app->request->post()) && $this->saveNeedle($model)) {
+            return $this->redirect(['view', 'id' => $model->id]);
+        } else {
+            $model = new Reserve();
+            return $this->render('createneedle', [
+                'model' => $model,
+            ]);
+        }
+    }
+    public function saveModel($model)
+    {
+        // Here is called getQuantArray() getter from TakMolForm model
+        // $model->reserve_time= implode(',', $model->reserve_time);
+
+        return $model->save();
+    }
+
+    public function saveInner($model){
+        $model->disease = '1';
+        return $model->save();
+    }
+    public function saveHarm($model){
+        $model->disease = '2';
+        return $model->save();
+    }
+    public function saveNeedle($model){
+        $model->disease = '3';
+        return $model->save();
     }
 
     /**
@@ -114,7 +165,7 @@ class ReserveController extends Controller
     {
         $model = $this->findModel($id);
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+        if ($model->load(Yii::$app->request->post()) && $this->saveModel($model)) {
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('update', [

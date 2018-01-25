@@ -18,8 +18,8 @@ class ReserveSearch extends Reserve
     public function rules()
     {
         return [
-            [['id', 'reserve_number', 'reserve_date','reserve_time', 'create_date', 'update_date'], 'integer'],
-            [['patient_name','patient_phone','remark','disease'], 'safe'],
+            [['id', 'reserve_number', 'reserve_date', 'create_date', 'update_date'], 'integer'],
+            [['patient_name','patient_phone','remark','disease','reserve_time'], 'safe'],
         ];
     }
 
@@ -68,7 +68,6 @@ class ReserveSearch extends Reserve
             'id' => $this->id,
             'reserve_number' => $this->reserve_number,
             'reserve_date' => $this->reserve_date,
-            'reserve_time' => $this->reserve_time,
             'create_date' => $this->create_date,
             'update_date' => $this->update_date,
         ]);
@@ -76,7 +75,8 @@ class ReserveSearch extends Reserve
         $query->andFilterWhere(['like', 'patient_name', $this->patient_name])
             ->andFilterWhere(['like', 'patient_phone', $this->patient_phone])
             ->andFilterWhere(['like', 'disease', $this->disease])
-            ->andFilterWhere(['like', 'remark', $this->remark]);
+            ->andFilterWhere(['like', 'remark', $this->remark])
+            ->andFilterWhere(['like','reserve_time',$this->reserve_time]);
 
 
         return $dataProvider;

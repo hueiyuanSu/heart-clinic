@@ -12,7 +12,7 @@ use Yii;
  * @property string $patient_name
  * @property string $patient_phone
  * @property integer $reserve_date
- * @property integer $reserve_time
+ * @property string $reserve_time
  * @property integer $create_date
  * @property integer $update_date
  * @property string $remark
@@ -36,8 +36,8 @@ class Reserve extends \yii\db\ActiveRecord
     {
         return [
             [['patient_name','patient_phone'], 'required'],
-            [['reserve_number', 'reserve_date','reserve_time', 'create_date', 'update_date'], 'integer'],
-            [['disease'], 'string', 'max' => 128],
+            [['reserve_number', 'reserve_date', 'create_date', 'update_date'], 'integer'],
+            [['disease','reserve_time'], 'string', 'max' => 128],
             [['remark'], 'string', 'max' => 255],
         ];
     }
@@ -65,9 +65,6 @@ class Reserve extends \yii\db\ActiveRecord
         if(!is_numeric($this->reserve_date)){
             $this->reserve_date = strtotime($this->reserve_date);
         }
-        if(!is_numeric($this->reserve_time)){
-            $this->reserve_time = strtotime($this->reserve_time);
-        }
         if(!$this->reserve_number){
             $this->reserve_number = time();
         }
@@ -78,7 +75,6 @@ class Reserve extends \yii\db\ActiveRecord
     }
     public function afterFind(){
         $this->reserve_date = Yii::$app->formatter->asTime($this->reserve_date, 'php:Y-m-d');
-        $this->reserve_time = Yii::$app->formatter->asTime($this->reserve_time, 'php:H:i');
         return true;
     }
 

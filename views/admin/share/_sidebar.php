@@ -23,7 +23,9 @@ $viewArray = array('index','update','create','view');
             <ul class="an-child-nav js-open-nav" <?= ( $controllerID =='reserve')? 'style="display: block;"':'' ?>>
                 <li><a href="<?= Url::to('/admin/reserve'); ?>" role="">預約查詢系統</a></li>
                 <li><a href="<?= Url::to('/admin/reserve/today'); ?>" role="">今日預約</a></li>
-                <li><a href="<?= Url::to('/admin/reserve/create'); ?>" role="">新增預約</a></li>
+                <li><a href="<?= Url::to('/admin/reserve/createinner'); ?>" role="">新增內診預約</a></li>
+                <li><a href="<?= Url::to('/admin/reserve/createharm'); ?>" role="">新增傷科預約</a></li>
+                <li><a href="<?= Url::to('/admin/reserve/createneedle'); ?>" role="">新增針灸預約</a></li>
             </ul>
         </li>
 
