@@ -67,5 +67,9 @@ return [
     'Permissions Management' => '權限管理',
     'Categories Manage' => '分類管理',
     'Create Category' => '新增分類頁面',
+    'Disease Time' => '門診時間',
+    'Create Disease Time' => '新增門診時間',
+    'Weekdays' => '星期',
+    'Time' => '時段',
 
 ];

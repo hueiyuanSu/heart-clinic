@@ -24,21 +24,24 @@ use yii\helpers\ArrayHelper;
                 );
                 ?>
             </div>
-            <div class="col-xs-12 col-sm-12 col-md-6">
-                <?= $form->field($model, 'patient_name')->textInput(['maxlength' => true]) ?>
-            </div>
-            <div class="col-xs-12 col-sm-12 col-md-6">
-                <?= $form->field($model, 'patient_phone')->textInput(['maxlength' => true]) ?>
-            </div>
-            <div class="col-xs-12 col-sm-12 col-md-6">
-                <?= $form->field($model, 'reserve_date',['enableClientValidation' => false])->textInput(['id' => 'datetimepicker-reserve']) ?>
-            </div>
-            <div class="col-xs-12 col-sm-12 col-md-6">
-                <?= $form->field($model, 'reserve_time',['enableClientValidation' => false])->textInput(['id' => 'datetimepicker-time']) ?>
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <?=
+                    $form->field($model, 'weekdays')->dropdownList([
+                        1 => '星期一',
+                        2 => '星期二',
+                        3 => '星期三',
+                        4 => '星期四',
+                        5 => '星期五',
+                        6 => '星期六',
+                    ],
+                    ['prompt'=>'請選擇星期幾']
+                );
+                ?>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
-                <?= $form->field($model, 'remark')->textarea(['rows' => '3']) ?>
+                <?= $form->field($model, 'time')->dropDownList(['id' => 'datetimepicker-time']);?>
             </div>
+
             <div class="col-xs-12 col-sm-12 col-md-12">
 
                 <div class="form-group">

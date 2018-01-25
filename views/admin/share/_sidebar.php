@@ -34,20 +34,21 @@ $viewArray = array('index','update','create','view');
                     <span class="an-arrow-nav"><i class="icon-arrow-down"></i></span>
                 </span>
             </a>
-            <ul class="an-child-nav js-open-nav" <?= ( $controllerID =='reserve')? 'style="display: block;"':'' ?>>
-                <li><a href="<?= Url::to('/admin/reserve'); ?>" role="">預約查詢系統</a></li>
+            <ul class="an-child-nav js-open-nav" <?= ( $controllerID =='waiting')? 'style="display: block;"':'' ?>>
+                <li><a href="<?= Url::to('/admin/waiting'); ?>" role="">今日候補名單</a></li>
+                <li><a href="<?= Url::to('/admin/waiting/create'); ?>" role="">新增候補</a></li>
             </ul>
         </li>
 
-        <li class="an-nav-item <?= ( $controllerID =='waiting')? 'current active':'' ?>">
+        <li class="an-nav-item <?= ( $controllerID =='datetime')? 'current active':'' ?>">
             <a class=" js-show-child-nav" href="#">
                 <i class="fa fa-calendar"></i>
-                <span class="nav-title" role="">日期時間設定
+                <span class="nav-title" role="">排程管理
                     <span class="an-arrow-nav"><i class="icon-arrow-down"></i></span>
                 </span>
             </a>
-            <ul class="an-child-nav js-open-nav" <?= ( $controllerID =='reserve')? 'style="display: block;"':'' ?>>
-                <li><a href="<?= Url::to('/admin/reserve'); ?>" role="">時間修改系統</a></li>
+            <ul class="an-child-nav js-open-nav" <?= ( $controllerID =='diseasetime')? 'style="display: block;"':'' ?>>
+                <li><a href="<?= Url::to('/admin/diseasetime'); ?>" role="">門診時間</a></li>
             </ul>
         </li>
 

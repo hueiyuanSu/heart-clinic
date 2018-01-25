@@ -46,7 +46,7 @@ return [
     'Invalid or expired link' => '',
     'New email' => '新Email',
     'New permission' => '新權限項目',
-    'New role' => '新角色',
+    'New role' => '新身份',
     'New user' => '新用戶',
     'Not blocked' => '非黑名單',
     'Permissions' => '權限',
