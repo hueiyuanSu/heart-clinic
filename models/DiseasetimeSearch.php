@@ -18,7 +18,8 @@ class DiseasetimeSearch extends Reserve
     public function rules()
     {
         return [
-            [['id', 'time','disease','weekdays'], 'integer'],
+            [['id','disease','weekdays'], 'integer'],
+            [['time'], 'safe'],
         ];
     }
 

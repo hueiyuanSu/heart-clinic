@@ -39,7 +39,11 @@ use yii\helpers\ArrayHelper;
                 ?>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
-                <?= $form->field($model, 'time')->dropDownList(['id' => 'datetimepicker-time']);?>
+                <?= $form->field($model, 'time')->checkboxList([
+                        '9:00' => '9:00','10:00' => '11:00','11:00' => '11:00','12:00' => '12:00','13:00' => '13:00','14:00' => '14:00',
+                        '15:00' => '15:00','16:00' => '16:00','17:00' => '17:00','18:00' => '18:00','19:00' => '19:00','20:00' => '20:00',
+                        '21:00' => '21:00','22:00' => '22:00'],
+                        ['separator' => '&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp']); ?>
             </div>
 
             <div class="col-xs-12 col-sm-12 col-md-12">

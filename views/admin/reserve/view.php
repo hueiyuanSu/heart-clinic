@@ -2,7 +2,7 @@
 
 use yii\helpers\Html;
 use yii\widgets\DetailView;
-
+use app\components\Status;
 /* @var $this yii\web\View */
 /* @var $model app\models\Banners */
 
@@ -35,7 +35,13 @@ $this->params['breadcrumbs'][] = $this->title;
             'patient_phone',
             'reserve_date:datetime',
             'reserve_time:datetime',
-            'disease',
+            [
+                'attribute'=>'disease',
+                'value' => function ($model) {
+                    $status_helper = new Status();
+                    return $status_helper->disease_status($model->disease);
+                },
+            ],
             'remark',
         ],
     ]) ?>

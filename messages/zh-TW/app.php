@@ -71,5 +71,6 @@ return [
     'Create Disease Time' => '新增門診時間',
     'Weekdays' => '星期',
     'Time' => '時段',
+    'Update Disease Time' => '修改門診時間',
 
 ];

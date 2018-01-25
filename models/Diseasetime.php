@@ -30,7 +30,8 @@ class Diseasetime extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['time','disease','weekdays'], 'integer'],
+            [['disease','weekdays'], 'integer'],
+            [['time'], 'string', 'max' => 255],
         ];
     }
 

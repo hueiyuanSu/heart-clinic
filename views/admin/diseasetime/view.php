@@ -2,11 +2,12 @@
 
 use yii\helpers\Html;
 use yii\widgets\DetailView;
+use app\components\Status;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Banners */
 
-$this->title = '預約編號'.$model->reserve_number;
+$this->title = '門診時間';
 $this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Reserve'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
@@ -31,12 +32,21 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
-            'patient_name',
-            'patient_phone',
-            'reserve_date:datetime',
-            'reserve_time:datetime',
-            'disease',
-            'remark',
+            [
+                'attribute'=>'disease',
+                'value' => function ($model) {
+                    $status_helper = new Status();
+                    return $status_helper->disease_status($model->disease);
+                },
+            ],
+            [
+                'attribute'=>'weekdays',
+                'value' => function ($model) {
+                    $status_helper = new Status();
+                    return $status_helper->weekdays_status($model->weekdays);
+                },
+            ],
+            'time',
         ],
     ]) ?>
 

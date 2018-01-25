@@ -35,8 +35,38 @@ $this->params['breadcrumbs'][] = $this->title;
                                     return $status_helper->disease_status($model->disease);
                                 },
                             ],
-                            'weekdays',
+                            [
+                                'attribute'=>'weekdays',
+                                'value' => function ($model) {
+                                    $status_helper = new Status();
+                                    return $status_helper->weekdays_status($model->weekdays);
+                                },
+                            ],
                             'time',
+                            [
+                                'class' => 'yii\grid\ActionColumn',
+                                'headerOptions' => ['style' => 'width:150px'],
+                                'template' => '{view}{update}{delete}',
+                                'buttons' => [
+                                    'view' => function ($url, $model) {
+                                        return Html::a('<div class="btn btn-info m-r-5"><i class="fa fa-eye"></i></div>', $url, [
+                                                    'title' => Yii::t('app', 'lead-view'),
+                                        ]);
+                                    },
+
+                                    'update' => function ($url, $model) {
+                                        return Html::a('<div class="btn btn-success m-r-5"><i class="fa fa-pencil"></i></div>', $url, [
+                                                    'title' => Yii::t('app', 'lead-update'),
+                                        ]);
+                                    },
+                                    'delete' => function ($url, $model) {
+                                        return Html::a('<div class="btn btn-danger"><i class="fa fa-trash"></i></div>', $url, [
+                                                    'title' => Yii::t('app', 'lead-delete'),
+                                        ]);
+                                    }
+
+                                ],
+                            ],
                         ],
                     ]); ?>
                 <?php Pjax::end(); ?>

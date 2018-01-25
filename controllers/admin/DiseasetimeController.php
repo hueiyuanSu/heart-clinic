@@ -94,7 +94,7 @@ class DiseasetimeController extends Controller
     {
         $model = new Diseasetime();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+        if ($model->load(Yii::$app->request->post()) && $this->saveModel($model)) {
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             $model = new Diseasetime();
@@ -114,7 +114,7 @@ class DiseasetimeController extends Controller
     {
         $model = $this->findModel($id);
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+        if ($model->load(Yii::$app->request->post()) && $this->saveModel($model)) {
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('update', [
@@ -134,6 +134,14 @@ class DiseasetimeController extends Controller
         $this->findModel($id)->delete();
 
         return $this->redirect(['index']);
+    }
+
+    public function saveModel($model)
+    {
+        // Here is called getQuantArray() getter from TakMolForm model
+        $model->time = implode(',', $model->time);
+
+        return $model->save();
     }
 
     /**

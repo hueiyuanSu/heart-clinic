@@ -5,10 +5,9 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\Banners */
 
-$this->title = Yii::t('app', 'Update Reserve');
-$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Reserve'), 'url' => ['index']];
-$this->params['breadcrumbs'][] = ['label' => '預約編號'.$model->reserve_number, 'url' => ['view', 'id' => $model->id]];
-$this->params['breadcrumbs'][] = Yii::t('app', 'Update');
+$this->title = Yii::t('app', 'Update Disease Time');
+$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Disease Time'), 'url' => ['index']];
+$this->params['breadcrumbs'][] = Yii::t('app', 'Update Disease Time');
 ?>
 <div class="an-body-topbar wow fadeIn">
 
