@@ -17,8 +17,8 @@ $this->params['breadcrumbs'][] = $this->title;
         <h2><?= Html::encode($this->title) ?></h2>
     </div>
     <div class="title_right">
-        <?= Html::a('<i class="fa fa-plus m-r-5"></i>'.Yii::t('app', 'Create Inner Reserve'), ['createinner'], ['class' => 'btn btn-success']) ?>
-        <?= Html::a('<i class="fa fa-plus m-r-5"></i>'.Yii::t('app', 'Create Harm Reserve'), ['createharm'], ['class' => 'btn btn-danger']) ?>
+        <?= Html::a('<i class="fa fa-plus m-r-5"></i>'.Yii::t('app', 'Create Inner Reserve'), ['createinner'], ['class' => 'btn  btn-danger']) ?>
+        <?= Html::a('<i class="fa fa-plus m-r-5"></i>'.Yii::t('app', 'Create Harm Reserve'), ['createharm'], ['class' => 'btn btn-success']) ?>
         <?= Html::a('<i class="fa fa-plus m-r-5"></i>'.Yii::t('app', 'Create Needle Reserve'), ['createneedle'], ['class' => 'btn btn-warning']) ?>
     </div>
 </div>

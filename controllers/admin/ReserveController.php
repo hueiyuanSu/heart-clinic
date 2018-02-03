@@ -95,7 +95,6 @@ class ReserveController extends Controller
     public function actionCreateinner()
     {
         $model = new Reserve();
-        $time = new Diseasetime();
 
         if ($model->load(Yii::$app->request->post()) && $this->saveInner($model)) {
             return $this->redirect(['view', 'id' => $model->id]);
@@ -109,7 +108,6 @@ class ReserveController extends Controller
     public function actionCreateharm()
     {
         $model = new Reserve();
-        $time = new Diseasetime();
 
         if ($model->load(Yii::$app->request->post()) && $this->saveHarm($model)) {
             return $this->redirect(['view', 'id' => $model->id]);
@@ -123,7 +121,6 @@ class ReserveController extends Controller
     public function actionCreateneedle()
     {
         $model = new Reserve();
-        $time = new Diseasetime();
 
         if ($model->load(Yii::$app->request->post()) && $this->saveNeedle($model)) {
             return $this->redirect(['view', 'id' => $model->id]);

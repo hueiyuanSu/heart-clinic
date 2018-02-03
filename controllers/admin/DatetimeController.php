@@ -3,8 +3,8 @@
 namespace app\controllers\admin;
 
 use Yii;
-use app\models\Diseasetime;
-use app\models\DiseasetimeSearch;
+use app\models\Datetime;
+use app\models\DatetimeSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use app\db\Transaction;
@@ -15,7 +15,7 @@ use yii\filters\VerbFilter;
 /**
  * BannersController implements the CRUD actions for Banners model.
  */
-class DiseasetimeController extends Controller
+class DatetimeController extends Controller
 {
     /**
      * @inheritdoc
@@ -64,7 +64,7 @@ class DiseasetimeController extends Controller
      */
     public function actionIndex()
     {
-        $searchModel = new DiseasetimeSearch();
+        $searchModel = new DatetimeSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
@@ -92,12 +92,12 @@ class DiseasetimeController extends Controller
      */
     public function actionCreate()
     {
-        $model = new Diseasetime();
+        $model = new Datetime();
 
         if ($model->load(Yii::$app->request->post()) && $this->saveModel($model)) {
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
-            $model = new Diseasetime();
+            $model = new Datetime();
             return $this->render('create', [
                 'model' => $model,
             ]);
@@ -153,7 +153,7 @@ class DiseasetimeController extends Controller
      */
     protected function findModel($id)
     {
-        if (($model = Diseasetime::findOne($id)) !== null) {
+        if (($model = Datetime::findOne($id)) !== null) {
             return $model;
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');

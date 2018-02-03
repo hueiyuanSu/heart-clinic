@@ -5,12 +5,12 @@ namespace app\models;
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use app\models\Diseasetime;
+use app\models\Datetime;
 
 /**
  * BannersSearch represents the model behind the search form about `app\models\Banners`.
  */
-class DiseasetimeSearch extends Reserve
+class DatetimeSearch extends Datetime
 {
     /**
      * @inheritdoc
@@ -18,8 +18,8 @@ class DiseasetimeSearch extends Reserve
     public function rules()
     {
         return [
-            [['id','disease','weekdays'], 'integer'],
-            [['time'], 'safe'],
+            [['id','date','time','is_selected'], 'integer'],
+            [['weekdays'], 'safe'],
         ];
     }
 
@@ -41,7 +41,7 @@ class DiseasetimeSearch extends Reserve
      */
     public function search($params,$date=null)
     {
-        $query = Diseasetime::find();
+        $query = Datetime::find();
 
         // add conditions that should always apply here
 
@@ -60,10 +60,12 @@ class DiseasetimeSearch extends Reserve
         // grid filtering conditions
         $query->andFilterWhere([
             'id' => $this->id,
+            'date' => $this->date,
             'time' => $this->time,
-            'disease' => $this->disease,
-            'weekdays' => $this->weekdays,
+            'is_selected' => $this->is_selected,
         ]);
+
+        $query->andFilterWhere(['like', 'weekdays', $this->weekdays]);
 
 
         return $dataProvider;

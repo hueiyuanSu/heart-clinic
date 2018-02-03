@@ -12,7 +12,7 @@ use Yii;
  * @property integer $disease
  * @property integer $weekays
  */
-class Diseasetime extends \yii\db\ActiveRecord
+class Datetime extends \yii\db\ActiveRecord
 {
     const STATUS_BLOCKED = 0;
     const STATUS_ACTIVE = 1;
@@ -21,7 +21,7 @@ class Diseasetime extends \yii\db\ActiveRecord
      */
     public static function tableName()
     {
-        return 'diseasetime';
+        return 'datetime';
     }
 
     /**
@@ -30,8 +30,8 @@ class Diseasetime extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['disease','weekdays'], 'integer'],
-            [['time'], 'string', 'max' => 255],
+            [['date','time','is_selected'], 'integer'],
+            [['weekdays'], 'string', 'max' => 11],
         ];
     }
 
@@ -42,29 +42,27 @@ class Diseasetime extends \yii\db\ActiveRecord
     {
         return [
             'id' => Yii::t('app', 'ID'),
+            'date' => Yii::t('app','Date'),
             'time' => Yii::t('app','Time'),
-            'disease' => Yii::t('app','Disease'),
             'weekdays' => Yii::t('app','Weekdays'),
+            'is_selected' => Yii::t('app','Is Selected'),
         ];
     }
 
-    public function getTime()
-    {
-         // Initialize it from 'quant' attribute
-         if($this->time == null)
-         {
-               $this->time= explode(',', $this->time);
-         }
-         return $this->time;
-    }
+    // public function getTime()
+    // {
+    //      // Initialize it from 'quant' attribute
+    //      if($this->time == null)
+    //      {
+    //            $this->time= explode(',', $this->time);
+    //      }
+    //      return $this->time;
+    // }
 
-    public function setTime($value)
-    {
-         $this->time= $value;
-    }
-
-
-
+    // public function setTime($value)
+    // {
+    //      $this->time= $value;
+    // }
     // public function beforeValidate(){
     //     if(!is_numeric($this->reserve_date)){
     //         $this->reserve_date = strtotime($this->reserve_date);
