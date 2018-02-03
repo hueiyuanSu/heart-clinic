@@ -50,7 +50,7 @@ $viewArray = array('index','update','create','view');
                 </span>
             </a>
             <ul class="an-child-nav js-open-nav" <?= ( $controllerID =='diseasetime')? 'style="display: block;"':'' ?>>
-                <li><a href="<?= Url::to('/admin/diseasetime'); ?>" role="">門診時間</a></li>
+                <li><a href="<?= Url::to('/admin/datetime'); ?>" role="">門診時間</a></li>
             </ul>
         </li>
 
