@@ -30,7 +30,7 @@ class Datetime extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['date','time','is_selected'], 'integer'],
+            [['date','time','is_selected','disease_id'], 'integer'],
             [['weekdays'], 'string', 'max' => 11],
         ];
     }
@@ -46,43 +46,9 @@ class Datetime extends \yii\db\ActiveRecord
             'time' => Yii::t('app','Time'),
             'weekdays' => Yii::t('app','Weekdays'),
             'is_selected' => Yii::t('app','Is Selected'),
+            'disease_id' => Yii::t('app','Disease ID'),
         ];
     }
-
-    // public function getTime()
-    // {
-    //      // Initialize it from 'quant' attribute
-    //      if($this->time == null)
-    //      {
-    //            $this->time= explode(',', $this->time);
-    //      }
-    //      return $this->time;
-    // }
-
-    // public function setTime($value)
-    // {
-    //      $this->time= $value;
-    // }
-    // public function beforeValidate(){
-    //     if(!is_numeric($this->reserve_date)){
-    //         $this->reserve_date = strtotime($this->reserve_date);
-    //     }
-    //     if(!is_numeric($this->reserve_time)){
-    //         $this->reserve_time = strtotime($this->reserve_time);
-    //     }
-    //     if(!$this->reserve_number){
-    //         $this->reserve_number = time();
-    //     }
-    //     if(!$this->reserve_date && !$this->reserve_time){
-    //         return false;
-    //     }
-    //     return true;
-    // }
-    // public function afterFind(){
-    //     $this->reserve_date = Yii::$app->formatter->asTime($this->reserve_date, 'php:Y-m-d');
-    //     $this->reserve_time = Yii::$app->formatter->asTime($this->reserve_time, 'php:H:i');
-    //     return true;
-    // }
 
     // public function beforeSave($insert)
     // {
@@ -94,9 +60,10 @@ class Datetime extends \yii\db\ActiveRecord
     //     return true;
     // }
 
+    public function getDisease(){
+        return $this->hasMany(Disease::className(), ['id' => 'disease_id']);
+    }
 
-    /**
-     * @inheritdoc
-     * @return BannersQuery the active query used by this AR class.
-     */
+
+
 }

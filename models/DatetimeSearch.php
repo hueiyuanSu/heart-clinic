@@ -18,7 +18,7 @@ class DatetimeSearch extends Datetime
     public function rules()
     {
         return [
-            [['id','date','time','is_selected'], 'integer'],
+            [['id','date','time','is_selected','disease_id'], 'integer'],
             [['weekdays'], 'safe'],
         ];
     }
@@ -63,6 +63,7 @@ class DatetimeSearch extends Datetime
             'date' => $this->date,
             'time' => $this->time,
             'is_selected' => $this->is_selected,
+            'disease_id' => $this->disease_id,
         ]);
 
         $query->andFilterWhere(['like', 'weekdays', $this->weekdays]);

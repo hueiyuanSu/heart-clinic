@@ -13,17 +13,7 @@ use yii\helpers\ArrayHelper;
     <div class="col-md-12">
         <div class="banner-form">
             <?php $form = ActiveForm::begin(); ?>
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <?=
-                    $form->field($model, 'disease')->dropdownList([
-                        1 => '內診',
-                        2 => '針灸',
-                        3 => '傷科',
-                    ],
-                    ['prompt'=>'請選擇門診']
-                );
-                ?>
-            </div>
+
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <?=
                     $form->field($model, 'weekdays')->dropdownList([
